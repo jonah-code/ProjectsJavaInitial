@@ -6,6 +6,14 @@ public class Bill {
 	int barbecue;
 	int softDrinks;
 
+	
+	public Bill(char gender, int beer , int barbecue, int softDrinks) {
+		this.gender = gender;
+		this.barbecue =barbecue;
+		this.softDrinks =softDrinks;
+		this.beer = beer;
+	}
+	
 	double feeding() {
 		return this.beer*5 + this.barbecue*7 + this.softDrinks*3;
 	}

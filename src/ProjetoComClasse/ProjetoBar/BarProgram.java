@@ -3,10 +3,8 @@ package ProjetoComClasse.ProjetoBar;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Bar {
+public class BarProgram {
 	public static void main(String[] args) {
-		
-		Bill bill = new Bill();
 		char gender;
 		int qtBeer;
 		int qtBarbecue;
@@ -17,24 +15,20 @@ public class Bar {
 		
 		System.out.print("sexo:");
 		gender = sc.next().charAt(0);
-		bill.gender = gender;
-		
 		
 		System.out.print("quantidade de cerveja:");
-		qtBeer = sc.nextInt();
-		bill.beer = qtBeer;
+		qtBeer = sc.nextInt();	
 		
 		System.out.print("quantidade de refrigerantes:");
-		qtSoftDrink = sc.nextInt();
-		bill.softDrinks = qtSoftDrink;
-		
+		qtSoftDrink = sc.nextInt();	
 		
 		System.out.print("quantidade de churasco:");
 		qtBarbecue = sc.nextInt();
-		bill.barbecue =  qtBarbecue;
 		
+		Bill bill = new Bill(gender, qtBeer, qtBarbecue, qtSoftDrink);		
 		
 		System.out.println(bill);
+		
 		//System.out.printf("%s %d %d", gender, qtBeer , qtBarbecue);
 		sc.close();
 	}
