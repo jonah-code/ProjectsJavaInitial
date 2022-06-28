@@ -25,8 +25,12 @@ public class Champion {
 		return life;
 	}
 
-	public void setLife(int atacck) {
-		this.life -=atacck ;
+	public void setLife(int damager) {
+		if(life < damager) {
+			this.life = 0;
+		}
+		else
+		this.life -=damager ;
 	}
 
 	public int getAttack() {
@@ -45,10 +49,17 @@ public class Champion {
 		this.armor = armor;
 	}
 	
-	void takeDamage(Champion oponent) {
-		setLife(oponent.attack);
+	public void takeDamage(Champion oponent) {
+		if(oponent.attack < armor) {
+			setLife(1);
+		}else {
+//			System.out.println("Entrei no else tenho ataque " + attack + "e a armadura do meu oponente é "+oponent.armor);
+			int damager = Math.abs(oponent.attack - armor);
+			setLife(damager);			
+		}
 	}
 	
+
 //	public String toString() {
 //	
 //	}
